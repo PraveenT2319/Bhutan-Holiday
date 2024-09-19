@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerary Route Map Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+
+        /* Left side for the itinerary details */
+        .itinerary {
+            flex: 1;
+            padding: 20px;
+            background-color: #f9f9f9;
+            overflow-y: scroll;
+        }
+
+        .itinerary h2 {
+            color: #444;
+        }
+
+        .itinerary ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .itinerary ul li {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container {
+            flex: 2;
+            position: relative;
+            background: url('paris-map.jpg') no-repeat center center/cover;
+            height: 100vh;
+        }
+
+        /* Markers on the map */
+        .map-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .marker1 { top: 60%; left: 50%; }
+        .marker2 { top: 40%; left: 45%; }
+        .marker3 { top: 30%; left: 60%; }
+        .marker4 { top: 10%; left: 30%; }
+
+        /* Arrows between markers */
+        .route-line {
+            position: absolute;
+            width: 2px;
+            background-color: blue;
+        }
+
+        .line1 { 
+            top: 60%; left: 50%; 
+            height: 100px; transform: rotate(45deg);
+        }
+
+        .line2 {
+            top: 30%; left: 55%;
+            height: 80px; transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Itinerary Details -->
+        <div class="itinerary">
+            <h2>Travel Itinerary</h2>
+            <ul>
+                <li><strong>Day 1 - Arrival</strong><br>Arrival at Charles de Gaulle Airport</li>
+                <li><strong>Day 1 - Eiffel Tower</strong><br>Visit Eiffel Tower in the evening</li>
+                <li><strong>Day 2 - Louvre Museum</strong><br>Explore the Louvre Museum</li>
+                <li><strong>Day 2 - Montmartre</strong><br>Walk around Montmartre</li>
+            </ul>
+        </div>
+
+        <!-- Map with route design -->
+        <div class="map-container">
+            <!-- Custom markers -->
+            <div class="map-marker marker1" title="Charles de Gaulle Airport"></div>
+            <div class="map-marker marker2" title="Eiffel Tower"></div>
+            <div class="map-marker marker3" title="Louvre Museum"></div>
+            <div class="map-marker marker4" title="Montmartre"></div>
+
+            <!-- Connecting routes (lines/arrows) -->
+            <div class="route-line line1"></div>
+            <div class="route-line line2"></div>
+        </div>
+    </div>
+
+</body>
+</html>
